@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game name generator</title>
+</head>
+<body>
+
+    <style>
+
+        body {
+            background-image: url(FundoDo)
+        }
+
+        h1 {
+            font-family: Verdana, Tahoma, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        p {
+            font-family: Verdana, Tahoma, sans-serif;
+            display: flex;
+            justify-content: center;
+            background-color: gainsboro;
+            margin-left: 30%;
+            margin-right: 30%;
+            border-radius: 5px;
+            font-size: larger;
+        }
+
+        button {
+            border: none;
+            background-color: rgb(64, 7, 117);
+            border-radius: 5px;
+            font-size: larger;
+            color: gainsboro;
+            height: 35px;
+        };
+    </style>
+
+    <h1>Game name generator</h1>
+
+    <p id="names"></p>
+
+    <center>
+        <button onclick="showNames()">Generate names</button>
+            </center>
+
+    <script>
+
+    const names = [
+        "Nebula Nomads",
+        "Quantum Quake",
+        "ChronoCraft",
+        "Etheria Odyssey",
+        "CyberSerpent",
+        "DreamWeaver",
+        "Solaris Syndicate",
+        "Mythic Monoliths",
+        "GalactiXeno",
+        "MechMystics",
+        "BioBlitz",
+        "Inferno Inception",
+        "Zenith Zephyr",
+        "Cryptic Chronicles",
+        "Pangea Paradox",
+        "Abyssal Ascension",
+        "Celestial Cipher",
+        "RuneRiders",
+        "Crystal Conquest",
+        "Astral Alchemists",
+        "Terra Tinkerers",
+        "Neon Nexus",
+        "Stellar Saboteurs",
+        "Arcane Aegis",
+        "Quantum Quicksand",
+        "DreamDare",
+        "HydroHex",
+        "Icarus Impact",
+        "SteamPunked",
+        "Alien Asylum",
+        "Starship Salvage",
+        "Mythic Matrix",
+        "Titan Trails",
+        "Elysian Echoes",
+        "AeroAlchemy",
+        "Vortex Vendetta",
+        "Pandora's Paragon",
+        "Dawn of Dynasties",
+        "Crystal Catalyst",
+        "Astral Anomaly",
+        "Clockwork Cataclysm",
+        "Celestial Chaos",
+        "Skyward Sirens",
+        "Quantum Quest",
+        "Neo-Nomads",
+        "Etherium Enigma",
+        "Neon Nomicon",
+        "Solar Seraphs",
+        "Galactic Gears",
+        "MechMania",
+        "BioBlight",
+        "Inferno Infusion",
+        "Zenith Ziggurat",
+        "Cryptic Captains",
+        "Pangaea Pioneers",
+        "Abyssal Amulets",
+        "Celestial Crusaders",
+        "RuneRealm",
+        "Crystal Clash",
+        "Astral Architects",
+        "Terra Tech",
+        "Neon Nocturne",
+        "Stellar Sorcery",
+        "Arcane Ark",
+        "Quantum Quandary",
+        "Dream Dynamo",
+        "HydroHarbor",
+        "Icarus Interstellar",
+        "SteamPioneers",
+        "Alien Arkana",
+        "Starship Scavengers",
+        "Mythic Matrix",
+        "Titan Torrent",
+        "Elysium Enclave",
+        "AeroArtifacts",
+        "Vortex Virtuoso",
+        "Pandora's Paradox",
+        "Dawn of Dominion",
+        "Crystal Conjurers",
+        "Astral Ascendancy",
+        "Clockwork Conundrum",
+        "Celestial Citadel",
+        "Skyward Symphony",
+        "Quantum Quagmire",
+        "Neo-Navigators",
+        "Etherium Echo",
+        "Neon Nebulae",
+        "Solaris Seekers",
+        "Galactic Glyphs",
+        "MechMages",
+        "BioBrigade",
+        "Inferno Infiltration",
+        "Zenith Zeppelin",
+        "Cryptic Castles",
+        "Pangaea Peril",
+        "Abyssal Artifice",
+        "Celestial Conquest",
+        "RuneRenegades",
+        "Crystal Cartography",
+        "Astral Allegiance",
+        "Terra Triumph",
+        "Neon Nostalgia",
+        "Stellar Strategies",
+        "Arcane Allies",
+        "Quantum Quicksilver",
+        "Dream Descent",
+        "HydroHaven",
+        "Icarus Infinity",
+        "SteamStratos",
+        "Alien Anarchy",
+        "Starship Scramble",
+        "Mythic Mechanisms",
+        "Titan Tempest",
+        "Elysian Enigma",
+        "AeroArmada",
+        "Vortex Voyagers",
+        "Pandora's Pursuit",
+        "Dawn of Destiny",
+        "Crystal Crest",
+        "Astral Agenda",
+        "Clockwork Cadence",
+        "Celestial Celesta",
+        "Skyward Serenade",
+        "Quantum Query",
+        "Neo-Navigators",
+        "Etherium Echoes",
+        "Neon Nexus",
+        "Solaris Seekers",
+        "Galactic Guardians",
+        "MechMayhem",
+        "BioBots",
+        "Inferno Invaders",
+        "Zenith Zephyrs",
+        "Cryptic Keep",
+        "Pangaea Puzzles",
+        "Abyssal Allure",
+        "Celestial Crucible",
+        "RuneRise",
+        "Crystal Command",
+        "Astral Armory",
+        "Terra Titans",
+        "Neon Noire",
+        "Stellar Synchrony",
+        "Arcane Arsenal",
+        "Quantum Quasar",
+        "Dream Divinity",
+        "HydroHarmony",
+        "Icarus Impact",
+        "SteamStratos",
+        "Alien Arkana",
+        "Starship Scramble",
+        "Mythic Mechanisms",
+        "Titan Trove",
+        "Elysium Epoch",
+        "AeroAllegiance",
+        "Vortex Voyagers",
+        "Pandora's Parable",
+        "Dawn of Dominion",
+        "Crystal Conundrums",
+        "Astral Affinity",
+        "Clockwork Crusade",
+        "Celestial Chalice",
+        "Skyward Saga",
+        "Quantum Query",
+        "Neo-Navigators",
+        "Etherium Enigma",
+        "Neon Nexus",
+        "Solaris Secrets",
+        "Galactic Grid",
+        "MechMysteries",
+        "BioBrawl",
+        "Inferno Inquisition",
+        "Zenith Ziggurat",
+        "Cryptic Chronicles",
+        "Pangaea Pioneers",
+        "Abyssal Artifacts",
+        "Celestial Chronicles",
+        "RuneRift",
+        "Crystal Coalition",
+        "Astral Asylum",
+        "Terra Traverse",
+        "Neon Nectar",
+        "Stellar Syndicate",
+        "Arcane Arcadia",
+        "Quantum Quagmire",
+        "Dream Delirium",
+        "HydroHaven",
+        "Icarus Interstellar",
+        "SteamPioneers",
+        "Alien Arkana",
+        "Starship Secrets",
+        "Mythic Metropolis",
+        "Titan Trove",
+        "Elysium Epoch",
+        "AeroAllegiance",
+        "Vortex Voyagers",
+        "Pandora's Parable",
+        "Dawn of Dominion",
+        "Crystal Conquest",
+        "Astral Ascension"
+    ];
+    
+    function showNames() {
+        const indice = Math.floor(Math.random()* names.length);
+        document.getElementById("names").textContent = names[indice];
+    };
+
+</script>
+
+</body>
+</html>
